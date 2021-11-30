@@ -1,6 +1,6 @@
 // create LINE SDK config from env variables
 module.exports = {
-  channelSecret: "ca0a88f28f769db51317e61f6de6d992",
+  channelSecret: "eb82e153d8fe453231eaa68007deca7c",
   channelAccessToken:
-    "aVpaT4NEYoIsZp/fxi0ZopHSUue/ZxUAxFnIX9GQIp0P8rgyzXwElLrevLLaHmX5pOx2Ene2s2XNkzO9QfH5yttQJDRiUavKhf39SVbCUWyCqRXu8k1TvYBf/HqAaLItPWd9HLtKA/0qAH+eavXAnQdB04t89/1O/w1cDnyilFU=",
+    "oO5poniACHNzMHE2XzbO0xBakaGCoSdpJK97VG+d+ahTs54k1gZjVcKv4TWbhZXOWNcHue7a5tmPv7NFfp5vHnLR+Ax+c2XLOxokbRB/s5DCyDf1AGk1N7q+IVkHjAMcUQ/5z167qTEJdYOpnzGv1gdB04t89/1O/w1cDnyilFU=",
 };
