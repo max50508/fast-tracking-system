@@ -28,6 +28,32 @@ const handleText = async (message, replyToken, source) => {
           ],
         },
       });
+    case "人流資訊":
+      return await client.replyMessage(replyToken, {
+        type: "text", // ①
+        text: "請選擇想要的店家類別",
+        quickReply: {
+          // ②
+          items: [
+            {
+              type: "action",
+              action: {
+                type: "message",
+                label: "人流資訊",
+                text: "人流資訊",
+              },
+            },
+            {
+              type: "action",
+              action: {
+                type: "uri",
+                label: "地方消息",
+                uri: "https://line.me/R/nv/location/",
+              },
+            },
+          ],
+        },
+      });
   }
 };
 

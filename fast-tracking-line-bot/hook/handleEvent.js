@@ -12,6 +12,24 @@ const handleEvent = async (event) => {
       }
     case "beacon":
       return await handleBeacon(event, event.replyToken);
+    case "follow":
+      return replyText(event.replyToken, "Got followed event");
+
+    case "unfollow":
+      return console.log(`Unfollowed this bot: ${JSON.stringify(event)}`);
+
+    case "join":
+      return replyText(event.replyToken, `Joined ${event.source.type}`);
+
+    case "leave":
+      return console.log(`Left: ${JSON.stringify(event)}`);
+
+    case "postback":
+      let data = event.postback.data;
+      if (data === "DATE" || data === "TIME" || data === "DATETIME") {
+        data += `(${JSON.stringify(event.postback.params)})`;
+      }
+      return replyText(event.replyToken, `Got postback: ${data}`);
     // case "image":
     //   return handleImage(message, event.replyToken);
     // case "location":
