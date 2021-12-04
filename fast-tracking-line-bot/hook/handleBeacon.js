@@ -30,8 +30,7 @@ const handleBeacon = async (event, replyToken) => {
   if (event.beacon.hwid === "01566e5e3a") {
     return await client.replyMessage(replyToken, {
       type: "text", // ①
-      text: `你好! ${userProfile.displayName} \n偵測到beacon id為${event.beacon.hwid} \n 您的UserId為 ${event.source.userId}\n
-            您所在的位置為 '路易莎-中原店'`,
+      text: `你好! ${userProfile.displayName} \n偵測到beacon id為${event.beacon.hwid} \n 您的UserId為 ${event.source.userId}\n您所在的位置為 '路易莎-中原店'`,
     });
   }
 };
