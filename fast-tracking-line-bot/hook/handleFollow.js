@@ -1,5 +1,5 @@
 // return replyText(event.replyToken, `Joined ${event.source.type}`);
-
+// init test
 const client = require("../config/client");
 
 const handleFollow = async (event, replyToken) => {
