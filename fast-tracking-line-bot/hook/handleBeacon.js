@@ -3,6 +3,17 @@ const client = require("../config/client");
 // const admin = require("firebase-admin"); //arrayUnion 一定要從admin崁入
 const handleBeacon = async (event, replyToken) => {
   // const firestoreData = await firestore.collection("Shop").get();
+  // const userProfile = {};
+  // client
+  //   .getProfile(event.source.userId)
+  //   .then((profile) => {
+  //     console.log(profile);
+  //     userProfile = profile;
+  //   })
+  //   .catch((err) => {
+  //     // error handling
+  //     console.log(err);
+  //   });
   console.log(event.beacon);
   if (event.beacon.hwid === "01566e5e3a") {
     return await client.replyMessage(replyToken, {
