@@ -4,10 +4,9 @@ const client = require("../config/client");
 
 const handleFollow = async (event, replyToken) => {
   const userProfile = {};
-
   await client
     .getProfile(event.source.userId)
-    .then((profile) => {
+    .then(async (profile) => {
       console.log(profile);
       Object.assign(userProfile, profile);
       console.log("123", userProfile);
@@ -18,7 +17,7 @@ const handleFollow = async (event, replyToken) => {
     });
   return await client.replyMessage(replyToken, {
     type: "text", // ①
-    text: `您好! ${userProfile.displayName} \n 歡迎加入疫大師共同防疫的行列!`,
+    text: `您好! ${userProfile?.displayName} \n 歡迎加入疫大師共同防疫的行列!`,
   });
 };
 
