@@ -5,7 +5,7 @@ const client = require("../config/client");
 const handleFollow = async (event, replyToken) => {
   return await client.replyMessage(replyToken, {
     type: "text", // ①
-    text: `Follow ${event.source.type}`,
+    text: `Follow ${event.source.type}\n${event}`,
   });
 };
 
