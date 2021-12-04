@@ -2,6 +2,18 @@ const client = require("../config/client");
 // const { firestore } = require("../config/firestore");
 // const admin = require("firebase-admin"); //arrayUnion 一定要從admin崁入
 const handleBeacon = async (event, replyToken) => {
+  const userProfile = {};
+  await client
+    .getProfile(event.source.userId)
+    .then(async (profile) => {
+      console.log(profile);
+      Object.assign(userProfile, profile);
+      console.log("123", userProfile);
+    })
+    .catch((err) => {
+      // error handling
+      console.log(err);
+    });
   // const firestoreData = await firestore.collection("Shop").get();
   // const userProfile = {};
   // client
@@ -18,7 +30,8 @@ const handleBeacon = async (event, replyToken) => {
   if (event.beacon.hwid === "01566e5e3a") {
     return await client.replyMessage(replyToken, {
       type: "text", // ①
-      text: `你好!\n偵測到beacon id為${event.beacon.hwid} \n 您的UserId為 ${event.source.userId}`,
+      text: `你好! ${userProfile.displayName} \n偵測到beacon id為${event.beacon.hwid} \n 您的UserId為 ${event.source.userId}\n
+            您所在的位置為 '路易莎-中原店'`,
     });
   }
 };
