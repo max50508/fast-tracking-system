@@ -2,11 +2,11 @@
 
 const client = require("../config/client");
 
-const handleJoin = async (event, replyToken) => {
+const handleFollow = async (event, replyToken) => {
   return await client.replyMessage(replyToken, {
     type: "text", // ①
-    text: `Joined ${event.source.type}`,
+    text: `Follow ${event.source.type}`,
   });
 };
 
-module.exports = handleJoin;
+module.exports = handleFollow;

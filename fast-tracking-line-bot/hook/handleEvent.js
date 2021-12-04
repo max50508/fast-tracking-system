@@ -1,7 +1,7 @@
 const handleText = require("../hook/handleText");
 // const handleLocation = require("../hook/handleLocation");
 const handleBeacon = require("../hook/handleBeacon");
-const handleJoin = require("../hook/handleJoin");
+const handleFollow = require("./handleFollow");
 // const handleImage = require("../hook/handleImage");
 const handleEvent = async (event) => {
   switch (event.type) {
@@ -14,13 +14,9 @@ const handleEvent = async (event) => {
     case "beacon":
       return await handleBeacon(event, event.replyToken);
     case "follow":
-      return replyText(event.replyToken, "Got followed event");
+      return handleFollow(event, event.replyToken);
     case "unfollow":
       return console.log(`Unfollowed this bot: ${JSON.stringify(event)}`);
-    case "join":
-      return handleJoin(event, event.replyToken);
-    case "leave":
-      return console.log(`Left: ${JSON.stringify(event)}`);
     // case "postback":
     //   let data = event.postback.data;
     //   if (data === "DATE" || data === "TIME" || data === "DATETIME") {
