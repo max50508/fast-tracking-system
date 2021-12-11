@@ -35,9 +35,9 @@ const handleFollow = async (event, replyToken) => {
     {
       type: "image",
       originalContentUrl:
-        "https://firebasestorage.googleapis.com/v0/b/yatspic/o/YatsLogo.jpg?alt=media&token=167de9ee-dbce-4ccd-86fd-8b3ca9d81142",
+        "https://firebasestorage.googleapis.com/v0/b/fast-tracking-system.appspot.com/o/addFriend.gif?alt=media&token=89b45980-26fd-46e2-adf5-ab744b5c13ac",
       previewImageUrl:
-        "https://firebasestorage.googleapis.com/v0/b/yatspic/o/YatsLogo.jpg?alt=media&token=167de9ee-dbce-4ccd-86fd-8b3ca9d81142",
+        "https://firebasestorage.googleapis.com/v0/b/fast-tracking-system.appspot.com/o/addFriend.gif?alt=media&token=89b45980-26fd-46e2-adf5-ab744b5c13ac",
     },
   ]);
 };
