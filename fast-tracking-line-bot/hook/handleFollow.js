@@ -19,10 +19,13 @@ const handleFollow = async (event, replyToken) => {
     {
       type: "text", // ①
       text: `你好! ${userProfile?.displayName}, 我是疫大師!\n歡迎你成為我的好友~ $`,
-      emojis: {
-        productId: "5ac1bfd5040ab15980c9b435",
-        emojiId: "038",
-      },
+      emojis: [
+        {
+          index: 23 + userProfile?.displayName.length,
+          productId: "5ac1bfd5040ab15980c9b435",
+          emojiId: "038",
+        },
+      ],
     },
     {
       type: "text", // ①
