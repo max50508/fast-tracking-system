@@ -19,7 +19,7 @@ const handleText = async (message, replyToken, source) => {
                     type: "text",
                     text: "為了提供個人化的服務，我會 紀錄你告訴我的個人資訊，請 詳細閱讀以上聲明，同意後我 就能夠為你進行各項服務！",
                     weight: "regular",
-                    size: "lg",
+                    size: "sm",
                     gravity: "top",
                     wrap: true,
                     contents: [],
