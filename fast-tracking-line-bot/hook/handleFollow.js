@@ -35,9 +35,9 @@ const handleFollow = async (event, replyToken) => {
     {
       type: "image",
       originalContentUrl:
-        "https://firebasestorage.googleapis.com/v0/b/fast-tracking-system.appspot.com/o/addFriend.gif?alt=media&token=89b45980-26fd-46e2-adf5-ab744b5c13ac",
+        "https://firebasestorage.googleapis.com/v0/b/fast-tracking-system.appspot.com/o/addFriend.png?alt=media&token=36375240-72db-4ffa-b10c-8a1e4daf779a",
       previewImageUrl:
-        "https://firebasestorage.googleapis.com/v0/b/fast-tracking-system.appspot.com/o/addFriend.gif?alt=media&token=89b45980-26fd-46e2-adf5-ab744b5c13ac",
+        "https://firebasestorage.googleapis.com/v0/b/fast-tracking-system.appspot.com/o/addFriend.png?alt=media&token=36375240-72db-4ffa-b10c-8a1e4daf779a",
     },
   ]);
 };
