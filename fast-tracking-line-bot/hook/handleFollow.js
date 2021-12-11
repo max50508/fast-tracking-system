@@ -38,6 +38,19 @@ const handleFollow = async (event, replyToken) => {
         "https://firebasestorage.googleapis.com/v0/b/fast-tracking-system.appspot.com/o/addFriend.png?alt=media&token=36375240-72db-4ffa-b10c-8a1e4daf779a",
       previewImageUrl:
         "https://firebasestorage.googleapis.com/v0/b/fast-tracking-system.appspot.com/o/addFriend.png?alt=media&token=36375240-72db-4ffa-b10c-8a1e4daf779a",
+      quickReply: {
+        // ②
+        items: [
+          {
+            type: "action",
+            action: {
+              type: "message",
+              label: "你好啊!",
+              text: "你好啊!",
+            },
+          },
+        ],
+      },
     },
   ]);
 };
