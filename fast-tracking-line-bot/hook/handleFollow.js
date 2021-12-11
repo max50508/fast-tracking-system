@@ -10,6 +10,7 @@ const handleFollow = async (event, replyToken) => {
       console.log(profile);
       Object.assign(userProfile, profile);
       console.log("123", userProfile);
+      console.log("index", 23 + userProfile?.displayName.length);
     })
     .catch((err) => {
       // error handling
@@ -18,10 +19,10 @@ const handleFollow = async (event, replyToken) => {
   return await client.replyMessage(replyToken, [
     {
       type: "text", // ①
-      text: `你好! ${userProfile?.displayName}, 我是疫大師!\n歡迎你成為我的好友~ $`,
+      text: `$ 你好! ${userProfile?.displayName}, 我是疫大師!\n歡迎你成為我的好友~ `,
       emojis: [
         {
-          index: 23 + userProfile?.displayName.length,
+          index: 0,
           productId: "5ac1bfd5040ab15980c9b435",
           emojiId: "038",
         },
