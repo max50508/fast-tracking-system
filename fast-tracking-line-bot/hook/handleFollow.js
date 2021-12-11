@@ -38,14 +38,30 @@ const handleFollow = async (event, replyToken) => {
         "https://firebasestorage.googleapis.com/v0/b/fast-tracking-system.appspot.com/o/addFriend.png?alt=media&token=36375240-72db-4ffa-b10c-8a1e4daf779a",
       previewImageUrl:
         "https://firebasestorage.googleapis.com/v0/b/fast-tracking-system.appspot.com/o/addFriend.png?alt=media&token=36375240-72db-4ffa-b10c-8a1e4daf779a",
+      quickReply: {
+        // ②
+        items: [
+          {
+            type: "action",
+            action: {
+              type: "message",
+              label: "你好啊!",
+              text: "你好啊!",
+            },
+          },
+        ],
+      },
     },
     {
-      type: "action",
-      action: {
-        type: "message",
-        label: "你好啊!",
-        text: "你好啊!",
-      },
+      type: "text", // ①
+      text: `你好! ${userProfile?.displayName}, 我是疫大師!\n歡迎你成為我的好友~ $`,
+      emojis: [
+        {
+          index: 24 + userProfile?.displayName.length,
+          productId: "5ac1bfd5040ab15980c9b435",
+          emojiId: "038",
+        },
+      ],
     },
   ]);
 };
