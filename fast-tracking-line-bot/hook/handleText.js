@@ -5,35 +5,15 @@ const handleText = async (message, replyToken, source) => {
     case "你好啊!":
       return await client.replyMessage(replyToken, {
         type: "template",
-        altText: "This is a buttons template",
+        altText: "使用系統之相關注意事項同意書",
         template: {
           type: "buttons",
-          thumbnailImageUrl: "https://example.com/bot/images/image.jpg",
-          imageAspectRatio: "rectangle",
-          imageSize: "cover",
-          imageBackgroundColor: "#FFFFFF",
-          title: "Menu",
-          text: "Please select",
-          defaultAction: {
-            type: "uri",
-            label: "View detail",
-            uri: "http://example.com/page/123",
-          },
+          text: "為了提供個人化的服務，我會 紀錄你告訴我的個人資訊，請 詳細閱讀以上聲明，同意後我 就能夠為你進行各項服務！",
           actions: [
             {
-              type: "postback",
-              label: "Buy",
-              data: "action=buy&itemid=123",
-            },
-            {
-              type: "postback",
-              label: "Add to cart",
-              data: "action=add&itemid=123",
-            },
-            {
               type: "uri",
-              label: "View detail",
-              uri: "http://example.com/page/123",
+              label: "閱讀疫大師注意事項及個人資訊保護法相關事項",
+              uri: "https://linecorp.com",
             },
           ],
         },
