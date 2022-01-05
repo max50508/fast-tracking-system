@@ -1,4 +1,4 @@
-const serviceAccount = require("./config/fbSA.js");
+const serviceAccount = require("../config/fbSA.js");
 const admin = require("../ firebase-admin");
 
 admin.initializeApp({
