@@ -5,8 +5,8 @@ const residentRef = firebaseStoreDB.collection("residents");
 const residentData = {};
 const handleText = async (message, replyToken, source) => {
   switch (message.text) {
-    case "你好啊!":
-      return await client.replyMessage(replyToken, checkMessage);
+    // case "你好啊!":
+    //   return await client.replyMessage(replyToken, checkMessage);
     default:
       console.log(10, source);
       residentRef

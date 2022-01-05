@@ -53,8 +53,9 @@ const checkMessage = [
         {
           type: "action",
           action: {
-            type: "message",
+            type: "postback",
             label: "同意",
+            data: "privacy=true",
             text: "同意",
           },
         },
