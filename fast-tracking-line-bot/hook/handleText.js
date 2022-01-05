@@ -12,7 +12,7 @@ const handleText = async (message, replyToken, source) => {
         .where("userId", "==", source.userId)
         .get()
         .then((res) => {
-          console.log(14, res.data());
+          console.log(14, res);
         });
   }
 };
