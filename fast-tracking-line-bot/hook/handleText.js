@@ -9,7 +9,6 @@ const handleText = async (message, replyToken, source) => {
     default:
       console.log(10, source);
       residentRef
-        .doc(source.userId)
         .where("userId", "==", source.userId)
         .get()
         .then((res) => {
