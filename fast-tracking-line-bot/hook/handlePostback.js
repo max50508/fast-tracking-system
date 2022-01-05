@@ -13,7 +13,7 @@ const handlePostback = async (event, replyToken, source) => {
       })
       .then((res) => {
         console.log(10, res);
-        return await client.replyMessage(replyToken, {
+        return client.replyMessage(replyToken, {
           text: `感謝您同意! 現在可立即開始使用瞜! \n 到處探險吧 ! `,
         });
       })
