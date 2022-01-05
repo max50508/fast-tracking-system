@@ -7,12 +7,12 @@ const handleText = async (message, replyToken, source) => {
     case "你好啊!":
       return await client.replyMessage(replyToken, checkMessage);
     default:
-      residentRef
-        .where("userId", "==", source.userId)
-        .get()
-        .then((res) => {
-          console.log(14, res);
-        });
+    // residentRef
+    //   .where("userId", "==", source.userId)
+    //   .get()
+    //   .then((res) => {
+    //     console.log(14, res);
+    //   });
   }
 };
 
