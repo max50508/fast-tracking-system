@@ -1,20 +1,42 @@
 // return replyText(event.replyToken, `Joined ${event.source.type}`);
 // init test
 const client = require("../config/client");
-
+const firebaseStoreDB = require("../util/fbDb.js");
 const handleFollow = async (event, replyToken) => {
   const userProfile = {};
+  const createTime = new Date();
+  const residentData = {
+    userId: event.source.userId,
+    privacy: false,
+    displayName: "",
+    pictureUrl: "",
+    create_time: createTime.toISOString(),
+  };
+  const residentRef = firebaseStoreDB.collection("residents");
   await client
     .getProfile(event.source.userId)
     .then(async (profile) => {
       console.log(profile);
       Object.assign(userProfile, profile);
+      residentData.displayName = userProfile?.displayName;
+      residentData.pictureUrl = userProfile?.pictureUrl;
       console.log("123", userProfile);
       console.log("index", 23 + userProfile?.displayName.length);
     })
     .catch((err) => {
       // error handling
       console.log(err);
+    });
+  residentRef
+    .where("userId", "==", event.source.userId)
+    .get()
+    .then((res) => {
+      if (res.empty == true) {
+        firebaseStoreDB
+          .collection("residents")
+          .doc(residentData.userId)
+          .set(residentData);
+      }
     });
   return await client.replyMessage(replyToken, [
     {
