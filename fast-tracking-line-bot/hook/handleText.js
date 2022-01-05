@@ -17,7 +17,7 @@ const handleText = async (message, replyToken, source) => {
             console.log(14, val.data());
             Object.assign(residentData, val.data());
             if (val.data().privacy === false) {
-              client.replyMessage(replyToken, checkMessage);
+              return await client.replyMessage(replyToken, checkMessage);
             }
           });
         });

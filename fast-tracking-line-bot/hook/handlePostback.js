@@ -18,7 +18,7 @@ const handlePostback = async (event, replyToken, source) => {
         console.log(11, err);
       });
   }
-  return client.replyMessage(replyToken, {
+  return await client.replyMessage(replyToken, {
     text: `感謝您同意! 現在可立即開始使用瞜! \n 到處探險吧 ! `,
   });
 };
