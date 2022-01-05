@@ -15,7 +15,7 @@ const handleEvent = async (event) => {
     case "beacon":
       return await handleBeacon(event, event.replyToken);
     case "postback":
-      handlePostback(event, event.replyToken, event.source);
+      return await handlePostback(event, event.replyToken, event.source);
     case "follow":
       return await handleFollow(event, event.replyToken);
     case "unfollow":
