@@ -4,8 +4,7 @@ const client = require("../config/client");
 // const residentRef = firebaseStoreDB.collection("residents");
 // const residentData = {};
 const handlePostback = async (event, replyToken) => {
-  let data = querystring.parse(event.postback.data);
-  console.log(8, data);
+  console.log(8, event.postback.data);
   // if (data === 'DATE' || data === 'TIME' || data === 'DATETIME') {
   //   data += `(${JSON.stringify(event.postback.params)})`;
   // }
