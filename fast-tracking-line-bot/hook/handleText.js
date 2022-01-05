@@ -11,6 +11,12 @@ const handleText = async (message, replyToken, source) => {
         .where("userId", "==", source.userId)
         .get()
         .then((res) => {
+          // if (res.empty == true) {
+          //   firebaseStoreDB
+          //     .collection("residents")
+          //     .doc(residentData.userId)
+          //     .set(residentData);
+          // }
           console.log(14, res);
         });
   }
