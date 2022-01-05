@@ -5,10 +5,11 @@ const residentRef = firebaseStoreDB.collection("residents");
 const handlePostback = async (event, replyToken, source) => {
   // console.log(8, event.postback.data, replyToken);
   if (event.postback.data === true) {
+    console.log("123123123");
     residentRef
       .doc(source.userId)
       .update({
-        privacy: event.postback.data,
+        privacy: true,
       })
       .then((res) => {
         console.log(10, res);
