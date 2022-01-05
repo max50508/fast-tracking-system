@@ -5,7 +5,7 @@ const firebaseStoreDB = require("../util/fbDb.js");
 const residentRef = firebaseStoreDB.collection("residents");
 const handlePostback = async (event, replyToken, source) => {
   console.log(8, typeof event.postback.data);
-  if (event.postback.data === true) {
+  if (event.postback.data === "true") {
     console.log("123123123");
     return residentRef
       .doc(source.userId)
