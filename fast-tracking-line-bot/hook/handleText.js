@@ -7,11 +7,13 @@ const handleText = async (message, replyToken, source) => {
     case "你好啊!":
       return await client.replyMessage(replyToken, checkMessage);
     default:
+      console.log(10, source);
       residentRef
+        .doc(source.userId)
         .where("userId", "==", source.userId)
         .get()
         .then((res) => {
-          console.log(14, res);
+          console.log(14, res.data());
         });
   }
 };
