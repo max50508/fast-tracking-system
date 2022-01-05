@@ -8,7 +8,7 @@ const handlePostback = async (event, replyToken, source) => {
     residentRef
       .doc(source.userId)
       .update({
-        privacy: devent.postback.data,
+        privacy: event.postback.data,
       })
       .then((res) => {
         console.log(10, res);
