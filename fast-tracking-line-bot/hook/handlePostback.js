@@ -2,12 +2,20 @@ const client = require("../config/client");
 // const checkMessage = require("../util/message.js");
 const firebaseStoreDB = require("../util/fbDb.js");
 const residentRef = firebaseStoreDB.collection("residents");
-// const residentData = {};
-const handlePostback = async (event, replyToken) => {
-  console.log(8, event.postback.data, replyToken);
+const handlePostback = async (event, replyToken, source) => {
+  // console.log(8, event.postback.data, replyToken);
   if (devent.postback.data === true) {
-    // data += `(${JSON.stringify(event.postback.params)})`;
-    console.log("nide");
+    residentRef
+      .doc(source.userId)
+      .update({
+        privacy: devent.postback.data,
+      })
+      .then((res) => {
+        console.log(10, res);
+      })
+      .catch((err) => {
+        console.log(11, err);
+      });
   }
 };
 
