@@ -9,7 +9,7 @@ const handleText = async (message, replyToken, source) => {
     //   return await client.replyMessage(replyToken, checkMessage);
     default:
       console.log(10, source);
-      await residentRef
+      residentRef
         .where("userId", "==", source.userId)
         .get()
         .then((res) => {
@@ -17,7 +17,7 @@ const handleText = async (message, replyToken, source) => {
             console.log(14, val.data());
             Object.assign(residentData, val.data());
             if (val.data().privacy === false) {
-              return client.replyMessage(replyToken, checkMessage);
+              return await client.replyMessage(replyToken, checkMessage);
             }
           });
         });
