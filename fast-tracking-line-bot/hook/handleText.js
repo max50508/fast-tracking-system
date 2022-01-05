@@ -16,11 +16,11 @@ const handleText = async (message, replyToken, source) => {
           res.forEach((val) => {
             console.log(14, val.data());
             Object.assign(residentData, val.data());
+            if (val.data().privacy === false) {
+              return await client.replyMessage(replyToken, checkMessage);
+            }
           });
         });
-      if (!residentData.privacy) {
-        return await client.replyMessage(replyToken, checkMessage);
-      }
   }
 };
 
