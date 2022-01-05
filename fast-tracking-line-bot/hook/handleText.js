@@ -4,64 +4,98 @@ const handleText = async (message, replyToken, source) => {
   switch (message.text) {
     case "你好啊!":
       return await client.replyMessage(replyToken, {
-        type: "template",
-        altText: "使用系統之相關注意事項同意書",
-        template: {
-          type: "buttons",
-          text: "為了提供個人化的服務，我會 紀錄你告訴我的個人資訊，請 詳細閱讀以上聲明，同意後我 就能夠為你進行各項服務！",
-          actions: [
-            {
-              type: "uri",
-              label: "閱讀疫大師注意事項及個人資訊保護法相關事項",
-              uri: "https://linecorp.com",
+        type: "carousel",
+        contents: [
+          {
+            type: "bubble",
+            size: "kilo",
+            body: {
+              type: "box",
+              layout: "vertical",
+              contents: [
+                {
+                  type: "text",
+                  text: "為了提供個人化的服務，我會紀錄你告訴我的個人資訊，請詳細閱讀以上聲明，同意後我就能夠為你進行各項服務！",
+                  weight: "regular",
+                  size: "md",
+                  decoration: "none",
+                  align: "start",
+                  wrap: true,
+                  offsetTop: "none",
+                  offsetStart: "xs",
+                  offsetEnd: "xs",
+                  offsetBottom: "none",
+                },
+              ],
+              backgroundColor: "#F7F7F7",
+              spacing: "none",
+              justifyContent: "space-around",
             },
-          ],
-        },
+            footer: {
+              type: "box",
+              layout: "vertical",
+              spacing: "sm",
+              contents: [
+                {
+                  type: "button",
+                  style: "link",
+                  action: {
+                    type: "uri",
+                    label: "閱讀及管家注意事項及個資相關保護法同意協定",
+                    uri: "https://linecorp.com",
+                  },
+                  height: "sm",
+                },
+              ],
+              flex: 0,
+            },
+          },
+        ],
       });
+
     // {
-    //   type: "flex",
-    //   altText: "恭喜您解鎖",
-    //   contents: {
-    //     type: "carousel",
-    //     contents: [
+    //   "type": "bubble",
+    //   "size": "kilo",
+    //   "body": {
+    //     "type": "box",
+    //     "layout": "vertical",
+    //     "contents": [
     //       {
-    //         type: "bubble",
-    //         body: {
-    //           type: "box",
-    //           layout: "vertical",
-    //           contents: [
-    //             {
-    //               type: "text",
-    //               text: "為了提供個人化的服務，我會 紀錄你告訴我的個人資訊，請 詳細閱讀以上聲明，同意後我 就能夠為你進行各項服務！",
-    //               weight: "regular",
-    //               size: "sm",
-    //               gravity: "top",
-    //               wrap: true,
-    //               contents: [],
-    //             },
-    //           ],
-    //         },
-    //         footer: {
-    //           type: "box",
-    //           layout: "vertical",
-    //           flex: 0,
-    //           spacing: "sm",
-    //           contents: [
-    //             {
-    //               type: "button",
-    //               action: {
-    //                 type: "uri",
-    //                 label: "閱讀疫大師注意事項及個人資訊保護法相關事",
-    //                 uri: "https://linecorp.com",
-    //               },
-    //               height: "sm",
-    //               style: "link",
-    //             },
-    //           ],
-    //         },
-    //       },
+    //         "type": "text",
+    //         "text": "為了提供個人化的服務，我會紀錄你告訴我的個人資訊，請詳細閱讀以上聲明，同意後我就能夠為你進行各項服務！",
+    //         "weight": "regular",
+    //         "size": "md",
+    //         "decoration": "none",
+    //         "align": "start",
+    //         "wrap": true,
+    //         "offsetTop": "none",
+    //         "offsetStart": "xs",
+    //         "offsetEnd": "xs",
+    //         "offsetBottom": "none"
+    //       }
     //     ],
+    //     "backgroundColor": "#F7F7F7",
+    //     "spacing": "none",
+    //     "justifyContent": "space-around"
     //   },
+    //   "footer": {
+    //     "type": "box",
+    //     "layout": "vertical",
+    //     "spacing": "sm",
+    //     "contents": [
+    //       {
+    //         "type": "button",
+    //         "style": "link",
+    //         "action": {
+    //           "type": "uri",
+    //           "label": "閱讀及管家注意事項及個資相關保護法同意協定",
+    //           "uri": "https://linecorp.com"
+    //         },
+    //         "height": "sm"
+    //       }
+    //     ],
+    //     "flex": 0
+    //   }
     // }
     case "人流資訊":
       return await client.replyMessage(replyToken, {
