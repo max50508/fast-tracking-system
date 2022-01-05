@@ -17,9 +17,9 @@ const handleText = async (message, replyToken, source) => {
             console.log(14, val.data());
             Object.assign(residentData, val.data());
             if (val.data().privacy === false) {
-              return await client.replyMessage(replyToken, checkMessage);
+              return client.replyMessage(replyToken, checkMessage);
             } else {
-              return await client.replyMessage(replyToken, {
+              return client.replyMessage(replyToken, {
                 text: `感謝您同意! 現在可立即開始使用瞜! \n 到處探險吧 ! `,
               });
             }
